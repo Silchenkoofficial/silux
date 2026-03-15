@@ -16,7 +16,7 @@ function flattenObject(
 }
 
 export function generateCSSVariables(theme: SiluxTheme): Record<string, string> {
-  const flat = flattenObject({ color: theme.colors } as Record<string, unknown>);
+  const flat = flattenObject(theme as unknown as Record<string, unknown>);
   return Object.entries(flat).reduce<Record<string, string>>((acc, [key, value]) => {
     acc[`--silux-${key}`] = value;
     return acc;
