@@ -1,0 +1,338 @@
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--silux-typography-fontFamilies-sans);
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: var(--silux-radii-md);
+  transition-property: background-color, border-color, color, box-shadow, opacity, transform;
+  transition-duration: var(--silux-animation-subtle-duration-normal);
+  transition-timing-function: var(--silux-animation-subtle-easing-default);
+  user-select: none;
+  text-decoration: none;
+  outline: none;
+  position: relative;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--silux-colors-focusRing-default);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--silux-colors-focusRing-offset);
+}
+
+.button:active:not(:disabled) {
+  transform: scale(0.97);
+  transition-duration: var(--silux-animation-subtle-duration-fast);
+}
+
+.button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.button[data-loading] {
+  cursor: wait;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* ─── Sizes ──────────────────────────────────────────────────────────────── */
+
+.xs {
+  height: 28px;
+  padding: 0 10px;
+  font-size: var(--silux-typography-fontSizes-xs);
+  border-radius: var(--silux-radii-sm);
+  gap: var(--silux-spacing-component-xs);
+}
+
+.sm {
+  height: 32px;
+  padding: 0 12px;
+  font-size: var(--silux-typography-fontSizes-sm);
+  border-radius: var(--silux-radii-md);
+  gap: var(--silux-spacing-component-sm);
+}
+
+.md {
+  height: 40px;
+  padding: 0 16px;
+  font-size: var(--silux-typography-fontSizes-sm);
+  border-radius: var(--silux-radii-md);
+  gap: var(--silux-spacing-component-md);
+}
+
+.lg {
+  height: 44px;
+  padding: 0 20px;
+  font-size: var(--silux-typography-fontSizes-md);
+  border-radius: var(--silux-radii-lg);
+  gap: var(--silux-spacing-component-lg);
+}
+
+.xl {
+  height: 52px;
+  padding: 0 24px;
+  font-size: var(--silux-typography-fontSizes-md);
+  border-radius: var(--silux-radii-lg);
+  gap: var(--silux-spacing-component-xl);
+}
+
+/* ─── Solid ──────────────────────────────────────────────────────────────── */
+
+.solid.primary {
+  background-color: var(--silux-colors-primary-default);
+  color: var(--silux-colors-primary-foreground);
+}
+.solid.primary:hover:not(:disabled) {
+  background-color: var(--silux-colors-primary-emphasis);
+}
+
+.solid.secondary {
+  background-color: var(--silux-colors-secondary-default);
+  color: var(--silux-colors-secondary-foreground);
+}
+.solid.secondary:hover:not(:disabled) {
+  background-color: var(--silux-colors-secondary-emphasis);
+}
+
+.solid.success {
+  background-color: var(--silux-colors-success-default);
+  color: var(--silux-colors-success-foreground);
+}
+.solid.success:hover:not(:disabled) {
+  background-color: var(--silux-colors-success-emphasis);
+}
+
+.solid.warning {
+  background-color: var(--silux-colors-warning-default);
+  color: var(--silux-colors-warning-foreground);
+}
+.solid.warning:hover:not(:disabled) {
+  background-color: var(--silux-colors-warning-emphasis);
+}
+
+.solid.danger {
+  background-color: var(--silux-colors-danger-default);
+  color: var(--silux-colors-danger-foreground);
+}
+.solid.danger:hover:not(:disabled) {
+  background-color: var(--silux-colors-danger-emphasis);
+}
+
+.solid.neutral {
+  background-color: var(--silux-colors-neutral-default);
+  color: var(--silux-colors-neutral-foreground);
+}
+.solid.neutral:hover:not(:disabled) {
+  background-color: var(--silux-colors-neutral-emphasis);
+}
+
+/* ─── Outline ────────────────────────────────────────────────────────────── */
+
+.outline.primary {
+  border-color: var(--silux-colors-primary-default);
+  color: var(--silux-colors-primary-default);
+}
+.outline.primary:hover:not(:disabled) {
+  background-color: var(--silux-colors-primary-subtle);
+}
+
+.outline.secondary {
+  border-color: var(--silux-colors-secondary-default);
+  color: var(--silux-colors-secondary-default);
+}
+.outline.secondary:hover:not(:disabled) {
+  background-color: var(--silux-colors-secondary-subtle);
+}
+
+.outline.success {
+  border-color: var(--silux-colors-success-default);
+  color: var(--silux-colors-success-default);
+}
+.outline.success:hover:not(:disabled) {
+  background-color: var(--silux-colors-success-subtle);
+}
+
+.outline.warning {
+  border-color: var(--silux-colors-warning-default);
+  color: var(--silux-colors-warning-default);
+}
+.outline.warning:hover:not(:disabled) {
+  background-color: var(--silux-colors-warning-subtle);
+}
+
+.outline.danger {
+  border-color: var(--silux-colors-danger-default);
+  color: var(--silux-colors-danger-default);
+}
+.outline.danger:hover:not(:disabled) {
+  background-color: var(--silux-colors-danger-subtle);
+}
+
+.outline.neutral {
+  border-color: var(--silux-colors-border-default);
+  color: var(--silux-colors-text-default);
+}
+.outline.neutral:hover:not(:disabled) {
+  background-color: var(--silux-colors-neutral-subtle);
+}
+
+/* ─── Ghost ──────────────────────────────────────────────────────────────── */
+
+.ghost.primary {
+  color: var(--silux-colors-primary-default);
+}
+.ghost.primary:hover:not(:disabled) {
+  background-color: var(--silux-colors-primary-subtle);
+}
+
+.ghost.secondary {
+  color: var(--silux-colors-secondary-default);
+}
+.ghost.secondary:hover:not(:disabled) {
+  background-color: var(--silux-colors-secondary-subtle);
+}
+
+.ghost.success {
+  color: var(--silux-colors-success-default);
+}
+.ghost.success:hover:not(:disabled) {
+  background-color: var(--silux-colors-success-subtle);
+}
+
+.ghost.warning {
+  color: var(--silux-colors-warning-default);
+}
+.ghost.warning:hover:not(:disabled) {
+  background-color: var(--silux-colors-warning-subtle);
+}
+
+.ghost.danger {
+  color: var(--silux-colors-danger-default);
+}
+.ghost.danger:hover:not(:disabled) {
+  background-color: var(--silux-colors-danger-subtle);
+}
+
+.ghost.neutral {
+  color: var(--silux-colors-text-default);
+}
+.ghost.neutral:hover:not(:disabled) {
+  background-color: var(--silux-colors-neutral-subtle);
+}
+
+/* ─── Soft ───────────────────────────────────────────────────────────────── */
+
+.soft.primary {
+  background-color: var(--silux-colors-primary-subtle);
+  color: var(--silux-colors-primary-emphasis);
+}
+.soft.primary:hover:not(:disabled) {
+  background-color: var(--silux-colors-primary-muted);
+}
+
+.soft.secondary {
+  background-color: var(--silux-colors-secondary-subtle);
+  color: var(--silux-colors-secondary-emphasis);
+}
+.soft.secondary:hover:not(:disabled) {
+  background-color: var(--silux-colors-secondary-muted);
+}
+
+.soft.success {
+  background-color: var(--silux-colors-success-subtle);
+  color: var(--silux-colors-success-emphasis);
+}
+.soft.success:hover:not(:disabled) {
+  background-color: var(--silux-colors-success-muted);
+}
+
+.soft.warning {
+  background-color: var(--silux-colors-warning-subtle);
+  color: var(--silux-colors-warning-emphasis);
+}
+.soft.warning:hover:not(:disabled) {
+  background-color: var(--silux-colors-warning-muted);
+}
+
+.soft.danger {
+  background-color: var(--silux-colors-danger-subtle);
+  color: var(--silux-colors-danger-emphasis);
+}
+.soft.danger:hover:not(:disabled) {
+  background-color: var(--silux-colors-danger-muted);
+}
+
+.soft.neutral {
+  background-color: var(--silux-colors-neutral-subtle);
+  color: var(--silux-colors-neutral-emphasis);
+}
+.soft.neutral:hover:not(:disabled) {
+  background-color: var(--silux-colors-neutral-muted);
+}
+
+/* ─── Content & spinner ──────────────────────────────────────────────────── */
+
+.content {
+  display: inline-flex;
+  align-items: center;
+  gap: inherit;
+}
+
+.contentHidden {
+  visibility: hidden;
+}
+
+/* Overlays exactly on top of hidden content — no layout shift */
+.spinnerOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spinnerAppear var(--silux-animation-expressive-duration-normal)
+    var(--silux-animation-expressive-easing-out) both;
+}
+
+.spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: spin var(--silux-animation-expressive-duration-slow)
+    var(--silux-animation-subtle-easing-linear) infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinnerAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.iconSlot {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
