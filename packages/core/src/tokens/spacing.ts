@@ -41,10 +41,10 @@ export type SpacingKey = keyof Spacing;
 
 export const componentSpacing = {
   xs: spacing[1],
-  sm: spacing[2],
-  md: spacing[4],
-  lg: spacing[6],
-  xl: spacing[8],
+  sm: spacing[1.5],
+  md: spacing[2],
+  lg: spacing[2.5],
+  xl: spacing[3],
 } as const;
 
 export type ComponentSpacing = typeof componentSpacing;
