@@ -1,0 +1,51 @@
+{/* Introduction.mdx */}
+
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Silux / Introduction" />
+
+# Silux UI
+
+A minimalist, token-driven React UI library built for scale.
+
+## Features
+
+- **Theme-aware** — light, dark, and system color scheme with full customization via `createTheme()`
+- **Type-safe** — TypeScript strict mode throughout
+- **Accessible** — keyboard navigation and ARIA attributes out of the box
+- **React 16+** compatible
+
+## Quick Start
+
+```tsx
+import { ThemeProvider } from '@silux/core';
+import { Button } from '@silux/ui';
+
+export default function App() {
+  return (
+    <ThemeProvider defaultColorScheme="system">
+      <Button variant="solid" colorScheme="primary">
+        Hello Silux
+      </Button>
+    </ThemeProvider>
+  );
+}
+```
+
+## Custom Theme
+
+```tsx
+import { ThemeProvider, createTheme } from '@silux/core';
+
+const theme = createTheme({
+  colors: {
+    primary: {
+      default: '#6366f1',
+      emphasis: '#4338ca',
+      foreground: '#ffffff',
+    },
+  },
+});
+
+<ThemeProvider theme={theme}>...</ThemeProvider>
+```
