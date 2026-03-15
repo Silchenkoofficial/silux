@@ -128,4 +128,8 @@ export type SemanticColors = {
     disabled: string;
     inverse: string;
   };
+  focusRing: {
+    default: string;
+    offset: string;
+  };
 };
