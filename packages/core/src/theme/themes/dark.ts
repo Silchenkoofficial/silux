@@ -76,6 +76,10 @@ export const darkTheme: SiluxTheme = {
       disabled: colorPalette.slate[700],
       inverse: colorPalette.slate[950],
     },
+    focusRing: {
+      default: colorPalette.blue[400],
+      offset: colorPalette.slate[950],
+    },
   },
   animation,
   breakpoints,
