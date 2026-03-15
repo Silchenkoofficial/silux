@@ -1,4 +1,16 @@
+import { animation } from '../../tokens/animation';
+import { breakpoints } from '../../tokens/breakpoints';
 import { colorPalette } from '../../tokens/colors';
+import { radii } from '../../tokens/radii';
+import { coloredShadows, shadows } from '../../tokens/shadows';
+import { componentSpacing, spacing } from '../../tokens/spacing';
+import {
+  fontFamilies,
+  fontSizes,
+  fontWeights,
+  letterSpacings,
+  lineHeights,
+} from '../../tokens/typography';
 import type { SiluxTheme } from '../createTheme';
 
 export const lightTheme: SiluxTheme = {
@@ -64,5 +76,23 @@ export const lightTheme: SiluxTheme = {
       disabled: colorPalette.slate[300],
       inverse: '#ffffff',
     },
+  },
+  animation,
+  breakpoints,
+  radii,
+  shadows: {
+    base: shadows,
+    colored: coloredShadows,
+  },
+  spacing: {
+    scale: spacing,
+    component: componentSpacing,
+  },
+  typography: {
+    fontFamilies,
+    fontSizes,
+    fontWeights,
+    lineHeights,
+    letterSpacings,
   },
 };
